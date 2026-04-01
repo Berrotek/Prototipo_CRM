@@ -1,0 +1,20 @@
+export function PurchaseOrderSummary() {
+  const cards = [
+    { label: 'Draft POs', value: '—', note: 'Not yet sent to supplier' },
+    { label: 'Open POs', value: '—', note: 'Sent or partially received' },
+    { label: 'Receiving progress', value: '—', note: 'Received vs ordered' },
+    { label: 'Daily PO value', value: '—', note: 'Purchase total today' },
+  ]
+
+  return (
+    <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      {cards.map((card) => (
+        <div key={card.label} className="rounded-2xl border border-neutral-800 bg-neutral-950 p-5">
+          <div className="text-sm text-neutral-400">{card.label}</div>
+          <div className="mt-2 text-3xl font-semibold text-white">{card.value}</div>
+          <div className="mt-2 text-xs text-neutral-500">{card.note}</div>
+        </div>
+      ))}
+    </div>
+  )
+}
